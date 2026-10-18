@@ -1,5 +1,6 @@
 import turtle as tl
-import UF as uf
+
+import uf
 
 
 class ChainTurtle(tl.Turtle):

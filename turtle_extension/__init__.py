@@ -12,27 +12,23 @@ And a lot more.
 Author: Miah M. Sabiq
 """
 
-from .Foundations import (
+from .foundations import (
+   CUSTOM_SHAPES,
+   SU,
    UV,
+   TurtleFct,
+   UserShape,
+   get_screen,
+   get_UserShape_dict,
+   mainloop,
+   reset_tls,
    t_now,
    t_shape,
-
-   get_screen,
-   SU,
-   mainloop,
    tls_color,
-   reset_tls,
-
-   UserShape,
-   get_UserShape_dict,
-   CUSTOM_SHAPES,
-
-   TurtleFct,
 )
-
-from .TurtleHeart import (
-ChainTurtle,
-tl,
+from .turtle_heart import (
+   ChainTurtle,
+   tl,
 )
 
 __all__ = [

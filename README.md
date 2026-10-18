@@ -19,7 +19,7 @@ TurtleExtension is a Python project dedicated to extending and experimenting wit
 Once published to PyPI, install with:
 
 ```bash
-python -m pip install TurtleExtension
+python -m pip install turtle_extension
 ```
 
 ## Usage
@@ -27,7 +27,7 @@ python -m pip install TurtleExtension
 ```python
 import turtle
 
-# Your TurtleExtension functionality goes here.
+# Your turtle_extension functionality goes here.
 ```
 
 The public API and usage examples will be documented as the project develops.
@@ -38,7 +38,7 @@ Clone the repository:
 
 ```bash
 git clone https://github.com/YOUR-USERNAME/TurtleExtension.git
-cd TurtleExtension
+cd turtle_extension
 ```
 
 Install the package locally if your project contains a `pyproject.toml`:

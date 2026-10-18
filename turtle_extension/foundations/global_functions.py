@@ -1,10 +1,11 @@
-from ..TurtleHeart import tl, ChainTurtle
-from .GlobalVariables import t_shape, UV
-from turtle import TurtleGraphicsError
 from time import sleep as rest
-import UF as uf
-from typing import Final, Literal
+from turtle import TurtleGraphicsError
+from typing import Final
 
+import uf
+
+from ..turtle_heart import ChainTurtle, tl
+from .global_variables import UV, t_shape
 
 _screen = None
 
@@ -24,13 +25,12 @@ def SU():
 def mainloop():
     get_screen().mainloop()
 
-type turtle_list = list[ChainTurtle]
 
 def tls_color(**options):
 
-    tl_num_name: Final[Literal["tl_num"]] = "tl_num"
-    entry_name: Final[Literal["entry"]] = "entry"
-    index_name: Final[Literal["index"]] = "index"
+    tl_num_name: Final = "tl_num"
+    entry_name: Final = "entry"
+    index_name: Final = "index"
 
     if tl_num_name in options:
         tl_num = options[tl_num_name]
@@ -51,7 +51,8 @@ def tls_color(**options):
     else:
         print("NONE of the entered options exist!")
         return None
-    tls: turtle_list = []
+
+    tls: list[ChainTurtle] = []
 
     for color_num in range(turtles_num_count):
         while True:
@@ -80,7 +81,7 @@ def tls_color(**options):
 
 def reset_tls(tls_list):
 
-    tls_list_name: Final[Literal["tls_list"]] = "tls_list"
+    tls_list_name: Final = "tls_list"
     uf.TypeValidate(list)(tls_list, name=tls_list_name)
     uf.SequenceValidate(ChainTurtle, ...)(tls_list, name=tls_list_name)
 

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "TurtleExtension"
-version = "1.0.0"
+version = "2.0.0"
 description = "A Python utility library providing turtle extensions on top of Python's original turtle feature."
 readme = "README.md"
 requires-python = ">= 3.14"
@@ -19,5 +19,10 @@ authors = [
 
 [tool.setuptools.packages.find]
 include = [
-    "TurtleExtension*",
+    "turtle_extension*",
+]
+
+[tool.ruff.lint]
+ignore = [
+    "RUF022",
 ]

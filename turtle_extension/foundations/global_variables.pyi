@@ -9,8 +9,8 @@ t_shape() -> lets users take the current turtle shape
 """
 
 from typing import Any
-from ..TurtleHeart import ChainTurtle
 
+from ..turtle_heart import ChainTurtle
 
 UV: dict[str, Any]
 
@@ -25,7 +25,6 @@ def t_now() -> ChainTurtle:
 
     :return: ChainTurtle
     """
-    ...
 
 def t_shape() -> str:
     """
@@ -37,4 +36,3 @@ def t_shape() -> str:
 
     :return: string
     """
-    ...

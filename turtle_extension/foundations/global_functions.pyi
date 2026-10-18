@@ -3,33 +3,29 @@ This module contains a very useful function: tls_color, which lets the user crea
 colors and get a list with them.
 """
 
-from ..TurtleHeart import tl, ChainTurtle
-
+from ..turtle_heart import ChainTurtle, tl
 
 def get_screen() -> tl.Screen:
     """
     Initiates the turtle screen when the function is called.
     :return: turtle screen object
     """
-    ...
 
 def SU() -> None:
     """
     This function updates the turtle screen.
     :return: None
     """
-    ...
 
 def mainloop() -> None:
     """
     This function keeps the turtle screen open.
     :return: None
     """
-    ...
 
-type turtle_list = list[ChainTurtle]
+type TurtleListType = list[ChainTurtle]
 
-def tls_color(**options) -> int | tuple[turtle_list, int] | turtle_list | None:
+def tls_color(**options) -> int | tuple[TurtleListType, int] | TurtleListType | None:
     """This function creates a turtle list with their colors or adds newly creates turtles to the UV["tls"] list
     to be used for the user_drawing_ft()
 
@@ -39,9 +35,8 @@ def tls_color(**options) -> int | tuple[turtle_list, int] | turtle_list | None:
     & it returns the index of the last turtle
     :return: tls_num: turtle list with colored turtles, entry: list with colored turtles + number of turtles ,otherwise: index of last turtle
     """
-    ...
 
-def reset_tls(tls_list: turtle_list) -> list:
+def reset_tls(tls_list: TurtleListType) -> list:
     """
     This function deletes the drawings of given turtle list + turtles
 

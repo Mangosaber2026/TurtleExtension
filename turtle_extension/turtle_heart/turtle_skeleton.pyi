@@ -2,11 +2,8 @@
 This module contains the class ChainTurtle() which is the foundational object around which this entire software has been made.
 """
 
-from numbers import Real
 from collections.abc import Callable
-
-
-tl = tl
+from numbers import Real
 
 class ChainTurtle:
     """This class adds chaining functionality to turtle.Turtle"""
@@ -16,7 +13,6 @@ class ChainTurtle:
         :param distance: distance in pixels
         :return: ChainTurtle()
         """
-        ...
 
     def fd_inv(self, distance: Real) -> ChainTurtle:
         """
@@ -24,7 +20,6 @@ class ChainTurtle:
         :param distance: distance in pixels
         :return: ChainTurtle()
         """
-        ...
 
     def bk(self, distance: Real) -> ChainTurtle:
         """
@@ -32,7 +27,6 @@ class ChainTurtle:
         :param distance: distance in pixels
         :return: ChainTurtle()
         """
-        ...
 
     def bk_inv(self, distance: Real) -> ChainTurtle:
         """
@@ -40,7 +34,6 @@ class ChainTurtle:
         :param distance: distance in pixels
         :return: ChainTurtle()
         """
-        ...
 
     def rt(self, angle: Real) -> ChainTurtle:
         """
@@ -48,7 +41,6 @@ class ChainTurtle:
         :param angle: angle in degrees
         :return: ChainTurtle()
         """
-        ...
 
     def lt(self, angle: Real) -> ChainTurtle:
         """
@@ -56,7 +48,6 @@ class ChainTurtle:
         :param angle: angle in degrees
         :return: ChainTurtle()
         """
-        ...
 
     def setpos(self, x_val: Real, y_val: Real) -> ChainTurtle:
         """
@@ -65,61 +56,53 @@ class ChainTurtle:
         :param y_val: y position in pixels
         :return: ChainTurtle()
         """
-        ...
 
     def pu(self) -> ChainTurtle:
         """
         Puts the pen down to leave a trace.
         :return: ChainTurtle()
         """
-        ...
 
     def pd(self) -> ChainTurtle:
         """
         Puts the pen up to not leave a trace.
         :return: ChainTurtle()
         """
-        ...
 
     def seth(self, direction: Real) -> ChainTurtle:
         """
         Sets the direction of the turtle starting East, going counterclockwise.
         :param direction: direction in degrees
         """
-        ...
 
     def home(self) -> ChainTurtle:
         """
         Sets the position of the turtle to home (0, 0) with trace, heading = 0 .
         :return: ChainTurtle()
         """
-        ...
 
     def home_inv(self) -> ChainTurtle:
         """
         Sets the position of the turtle to home (0, 0) without trace, heading = 0 .
         :return: ChainTurtle()
         """
-        ...
 
     def begin_fill(self) -> ChainTurtle:
         """
         Makes the turtle begin fill for a closed shape.
         :return: ChainTurtle()
         """
-        ...
 
     def end_fill(self) -> ChainTurtle:
         """
         Ends the turtle fill for a closed shape, therefore fills the shapes.
         :return: ChainTurtle()
         """
-        ...
 
     def circle(self,
                radius: Real,
                extent: Real | None = None,
-               steps: int = None) -> ChainTurtle:
+               steps: int | None = None) -> ChainTurtle:
         """
         Makes the turtle draw a circle
         :param radius: radius in pixels
@@ -127,33 +110,29 @@ class ChainTurtle:
         :param steps: number of sides
         :return: ChainTurtle()
         """
-        ...
 
     def circle_fill(self,
                     radius: Real,
                     angle: Real | None = None,
-                    sides: int = None) -> ChainTurtle:
+                    sides: int | None = None) -> ChainTurtle:
         """
         Makes the turtle draw a circle and fills it
         :param radius: radius in degrees
         :param angle: angle in degrees
         :param sides: number of sides
         """
-        ...
 
     def dot(self, radius: Real) -> ChainTurtle:
         """
         Makes the turtle draw a colored dot
         :param radius: radius in pixels
         """
-        ...
 
     def color(self, turtle_color: str) -> ChainTurtle:
         """
         Lets the user change the color of the turtle trace and turtle color itself
         :param turtle_color: valid turtle color
         """
-        ...
 
     def teleport(self, x: Real, y: Real, *, fill_gap: bool = False) -> ChainTurtle:
         """
@@ -161,35 +140,30 @@ class ChainTurtle:
         :param x: x position in pixels
         :param y: y position in pixels
         """
-        ...
 
     def shape(self, shape_name: str) -> ChainTurtle:
         """
         Changes the shape of the turtle shape
         :param shape_name: name of the shape
         """
-        ...
 
     def undo(self) -> ChainTurtle:
         """
         Undoes the last turtle command.
         :return: ChainTurtle()
         """
-        ...
 
     def clear(self) -> ChainTurtle:
         """
         Deletes the turtles drawings.
         :return: ChainTurtle()
         """
-        ...
 
     def ht(self) -> ChainTurtle:
         """
         Hides the turtle.
         :return: ChainTurtle()
         """
-        ...
 
     @classmethod
     def list_methods(cls) -> dict[str, Callable]:
@@ -197,4 +171,3 @@ class ChainTurtle:
         Creates a dictionary with all ChainTurtle methods and returns it
         :return: dictionary
         """
-        ...

@@ -1,7 +1,8 @@
-from ..TurtleHeart import tl, ChainTurtle
-from .GlobalVariables import UV
-from .CustomTurtleShapes import CUSTOM_SHAPES
-import UF as uf
+import uf
+
+from ..turtle_heart import ChainTurtle, tl
+from .custom_turtle_shapes import CUSTOM_SHAPES
+from .global_variables import UV
 
 
 class TurtleFct:

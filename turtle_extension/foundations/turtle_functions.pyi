@@ -2,8 +2,7 @@
 This module contains the class TurtleFct which lets the user change the turtle shape to a customized one.
 """
 
-from ..TurtleHeart import ChainTurtle
-
+from ..turtle_heart import ChainTurtle
 
 class TurtleFct:
     """
@@ -16,7 +15,6 @@ class TurtleFct:
         :param tls_num: ChainTurtle() or None
         :return: ChainTurtle() if tls_num is a ChainTurtle(), otherwise None
         """
-        ...
 
     @staticmethod
     def user_tls_shape_ft(tls_num: ChainTurtle | None = None) -> ChainTurtle | str:
@@ -25,4 +23,3 @@ class TurtleFct:
         :param tls_num: ChainTurtle() or None
         :return: ChainTurtle() if tls_num is a ChainTurtle(), otherwise None
         """
-        ...

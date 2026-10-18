@@ -1,7 +1,8 @@
-from ..TurtleHeart import tl
 from numbers import Real
-import UF as uf
 
+import uf
+
+from ..turtle_heart import tl
 
 helper = uf.helper
 
