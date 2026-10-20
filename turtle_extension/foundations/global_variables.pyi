@@ -12,6 +12,8 @@ from typing import Any
 
 from ..turtle_heart import ChainTurtle
 
+
+#* The type for the [[global_variables.py]] UV dictionary
 UV: dict[str, Any]
 
 def t_now() -> ChainTurtle:

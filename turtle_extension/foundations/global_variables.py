@@ -1,14 +1,15 @@
-# UV = UNIVERSAL VARIABLES
+#* UV = UNIVERSAL VARIABLES
 UV = {
-    "delay": None,            # Delay for user_drawing_ft()
-      "t": 0,                   # user_drawing_ft's current turtle
-      "tls": [],                # user_drawing_ft's turtle list
-      "tls_shape": "arrow",     # user_drawing_ft's turtle's current shape
-      "shape_library": [],      # user_drawing_ft's turtle shapes list
+    "delay": None,              #* Delay for [[turtle_runner.py#user_drawing_ft]]
+      "t": 0,                   #* user_drawing_ft's current turtle
+      "tls": [],                #* user_drawing_ft's turtle list
+      "tls_shape": "arrow",     #* turtle's current shape
 }
+
+#* Retrieves the current turtle from UV
 def t_now():
     return UV["tls"][UV["t"]]
 
+#* Retrieves the current turtle shape
 def t_shape():
     return UV["tls_shape"]
-

@@ -5,8 +5,11 @@ This module contains the class Usershape which contains functions to make a cust
 from collections.abc import Callable, Sequence
 from numbers import Real
 
+
+#* The type returned by each turtle shape changer function from [[UserShape]]
 type ReturnShapeType = Sequence[tuple[Real,Real]] | None
 
+#* The type of the dictionary derived from [[UserShape]]
 type UserShapeDictType = dict[
     str,
     Callable[[], ReturnShapeType]
@@ -53,7 +56,7 @@ class UserShape:
         """
 
     @classmethod
-    def _list_shapes(cls) -> UserShapeDictType:
+    def list_shapes(cls) -> UserShapeDictType:
         """
         Creates a dictionary with the functions in UserShape and returns it
         :return: dictionary containing function names -> function

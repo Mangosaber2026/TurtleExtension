@@ -12,25 +12,34 @@ And a lot more.
 Author: Miah M. Sabiq
 """
 
+#* Imports foundational functions across numerous files
 from .foundations import (
-   CUSTOM_SHAPES,
-   SU,
-   UV,
-   TurtleFct,
-   UserShape,
-   get_screen,
-   get_UserShape_dict,
-   mainloop,
-   reset_tls,
-   t_now,
-   t_shape,
-   tls_color,
-)
-from .turtle_heart import (
-   ChainTurtle,
-   tl,
+   CUSTOM_SHAPES,       #* [[custom_turtle_shapes.py]]
+   get_UserShape_dict,  #* [[custom_turtle_shapes.py#get_UserShape_dict]]
+
+   get_screen,          #* [[global_functions.py#get_screen]]
+   mainloop,            #* [[global_functions.py#mainloop]]
+   reset_tls,           #* [[global_functions.py#reset_tls]]
+   SU,                  #* [[global_functions.py#SU]]
+   tls_color,           #* [[global_functions.py#tls_color]]
+
+   t_now,               #* [[global_variables.py#t_now]]
+   t_shape,             #* [[global_variables.py#t_shape]]
+   UV,                  #* [[global_variables.py]]
+
+   TurtleFct,           #* [[TurtleFct]]
+   UserShape,           #* [[UserShape]]
 )
 
+#* Imports core mechanisms of this package:
+#*  [[ChainTurtle]] and [[turtle.py]] from [[turtle_skeleton.py]]
+from .turtle_heart import (
+   ChainTurtle,         #* [[ChainTurtle]]
+   tl,                  #* [[turtle.py]]
+)
+
+
+#* Specifies all available functions and dictionaries through wild card import
 __all__ = [
     "UV",
     "t_now",

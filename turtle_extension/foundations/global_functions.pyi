@@ -5,6 +5,7 @@ colors and get a list with them.
 
 from ..turtle_heart import ChainTurtle, tl
 
+
 def get_screen() -> tl.Screen:
     """
     Initiates the turtle screen when the function is called.

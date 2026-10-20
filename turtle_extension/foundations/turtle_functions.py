@@ -5,7 +5,9 @@ from .custom_turtle_shapes import CUSTOM_SHAPES
 from .global_variables import UV
 
 
+#* Class containing turtle shape changer functions
 class TurtleFct:
+    #* Main turtle shape changer function, potentially triggers [[TurtleFct#user_tls_shape_ft]]
     @classmethod
     def change_shape(cls, tls_num = None):
         if tls_num is not None:
@@ -32,6 +34,7 @@ class TurtleFct:
             else:
                 return cls.user_tls_shape_ft()
 
+    #* Lets the user choose custom shapes from [[UserShape]]
     @staticmethod
     def user_tls_shape_ft(tls_num = None):
         if tls_num is not None:

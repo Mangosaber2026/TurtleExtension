@@ -3,6 +3,7 @@ import turtle as tl
 import uf
 
 
+#* Class for chaining the conventional turtle functions [[turtle.py]]
 class ChainTurtle(tl.Turtle):
     def fd(self, distance):
         super().fd(distance)
@@ -96,6 +97,7 @@ class ChainTurtle(tl.Turtle):
         super().ht()
         return self
 
+#* Creates and returns a dictionary with all [[ChainTurtle]] functions
     @classmethod
     def list_methods(cls):
         return uf.classes_to_dict(cls)

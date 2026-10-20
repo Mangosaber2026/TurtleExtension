@@ -5,6 +5,9 @@ This module contains the class ChainTurtle() which is the foundational object ar
 from collections.abc import Callable
 from numbers import Real
 
+
+tl = tl
+
 class ChainTurtle:
     """This class adds chaining functionality to turtle.Turtle"""
     def fd(self, distance: Real) -> ChainTurtle:
@@ -73,6 +76,7 @@ class ChainTurtle:
         """
         Sets the direction of the turtle starting East, going counterclockwise.
         :param direction: direction in degrees
+        :return: ChainTurtle()
         """
 
     def home(self) -> ChainTurtle:
@@ -120,18 +124,21 @@ class ChainTurtle:
         :param radius: radius in degrees
         :param angle: angle in degrees
         :param sides: number of sides
+        :return: ChainTurtle()
         """
 
     def dot(self, radius: Real) -> ChainTurtle:
         """
         Makes the turtle draw a colored dot
         :param radius: radius in pixels
+        :return: ChainTurtle()
         """
 
     def color(self, turtle_color: str) -> ChainTurtle:
         """
         Lets the user change the color of the turtle trace and turtle color itself
         :param turtle_color: valid turtle color
+        :return: ChainTurtle()
         """
 
     def teleport(self, x: Real, y: Real, *, fill_gap: bool = False) -> ChainTurtle:
@@ -139,12 +146,14 @@ class ChainTurtle:
         Makes the turtle to go a specific coordinate with no trace
         :param x: x position in pixels
         :param y: y position in pixels
+        :return: ChainTurtle()
         """
 
     def shape(self, shape_name: str) -> ChainTurtle:
         """
         Changes the shape of the turtle shape
         :param shape_name: name of the shape
+        :return: ChainTurtle()
         """
 
     def undo(self) -> ChainTurtle:

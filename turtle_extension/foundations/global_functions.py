@@ -9,6 +9,8 @@ from .global_variables import UV, t_shape
 
 _screen = None
 
+#* Retrieves the turtle screen [[turtle.py#Screen]] if one has been made,
+#* else, a new screen is initialized
 def get_screen():
     global _screen
 
@@ -19,13 +21,18 @@ def get_screen():
 
     return _screen
 
+#* Updates the current turtle screen if one exists,
+#* else a new one is created and updated
 def SU():
     get_screen().update()
 
+#* Keeps the turtle window open if one exists,
+#* else a new one is created and kept open
 def mainloop():
     get_screen().mainloop()
 
-
+#* Creates a chosen number of turtles with different modes,
+#* also known as the turtle factory by the developer
 def tls_color(**options):
 
     tl_num_name: Final = "tl_num"
@@ -78,7 +85,8 @@ def tls_color(**options):
         return tls
     return None
 
-
+#* Resets the provided turtle list,
+#* deletes all turtle drawings and the turtles themselves
 def reset_tls(tls_list):
 
     tls_list_name: Final = "tls_list"
