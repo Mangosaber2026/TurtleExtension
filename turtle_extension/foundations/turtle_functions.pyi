@@ -13,7 +13,9 @@ class TurtleFct:
     def change_shape(cls, tls_num: ChainTurtle|None = None) -> ChainTurtle | str:
         """
         This function lets the user choose different turtles shapes, including a custom option.
+
         :param tls_num: ChainTurtle() or None
+
         :return: ChainTurtle() if tls_num is a ChainTurtle(), otherwise None
         """
 
@@ -21,6 +23,8 @@ class TurtleFct:
     def user_tls_shape_ft(tls_num: ChainTurtle | None = None) -> ChainTurtle | str:
         """
         This function lets the user create custom turtle shapes.
+
         :param tls_num: ChainTurtle() or None
+        
         :return: ChainTurtle() if tls_num is a ChainTurtle(), otherwise None
         """
