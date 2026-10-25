@@ -2,25 +2,23 @@
 This module contains the class ChainTurtle() which is the foundational object around which this entire software has been made.
 """
 
+import turtle  # noqa: I001
 from collections.abc import Callable
 from numbers import Real
+import typing as tp
 
 
-tl = tl
+tl = turtle
 
-class ChainTurtle:
+class ChainTurtle(tl.Turtle):
     """
     This class adds chaining functionality to turtle.Turtle
     
     """
-    def fd(self, distance: Real) -> ChainTurtle:
-        """
-        Makes the turtle go forward with trace.
+    @tp.override
+    def forward(self, distance: Real) -> ChainTurtle: ...
 
-        :param distance: distance in pixels
-
-        :return: ChainTurtle()
-        """
+    fd = forward
 
     def fd_inv(self, distance: Real) -> ChainTurtle:
         """
@@ -31,14 +29,11 @@ class ChainTurtle:
         :return: ChainTurtle()
         """
 
-    def bk(self, distance: Real) -> ChainTurtle:
-        """
-        Makes the turtle go backwards with trace.
+    @tp.override
+    def backward(self, distance: Real) -> ChainTurtle: ...
 
-        :param distance: distance in pixels
-
-        :return: ChainTurtle()
-        """
+    bk = backward
+    back = backward     # type: ignore
 
     def bk_inv(self, distance: Real) -> ChainTurtle:
         """
@@ -49,64 +44,39 @@ class ChainTurtle:
         :return: ChainTurtle()
         """
 
-    def rt(self, angle: Real) -> ChainTurtle:
-        """
-        Makes the turtle turn right.
+    @tp.override
+    def right(self, angle: Real) -> ChainTurtle: ...
 
-        :param angle: angle in degrees
+    rt = right
 
-        :return: ChainTurtle()
-        """
+    @tp.override
+    def left(self, angle: Real) -> ChainTurtle: ...
 
-    def lt(self, angle: Real) -> ChainTurtle:
-        """
-        Makes the turtle turn left.
+    lt = left
 
-        :param angle: angle in degrees
+    @tp.override
+    def goto(self, x_val: Real, y_val: Real) -> ChainTurtle: ...
 
-        :return: ChainTurtle()
-        """
+    setpos = goto
+    setposition = goto
 
-    def setpos(self, x_val: Real, y_val: Real) -> ChainTurtle:
-        """
-        Makes the turtle go to a specific position with a trace.
+    @tp.override
+    def penup(self) -> ChainTurtle: ...
 
-        :param x_val: x position in pixels
+    pu = penup
+    up = penup
 
-        :param y_val: y position in pixels
+    @tp.override
+    def pendown(self) -> ChainTurtle: ...
 
-        :return: ChainTurtle()
-        """
+    pd = pendown
+    down = pendown
 
-    def pu(self) -> ChainTurtle:
-        """
-        Puts the pen down to leave a trace.
+    @tp.override
+    def setheading(self, direction: Real) -> ChainTurtle: ...
 
-        :return: ChainTurtle()
-        """
-
-    def pd(self) -> ChainTurtle:
-        """
-        Puts the pen up to not leave a trace.
-
-        :return: ChainTurtle()
-        """
-
-    def seth(self, direction: Real) -> ChainTurtle:
-        """
-        Sets the direction of the turtle starting East, going counterclockwise.
-
-        :param direction: direction in degrees
-
-        :return: ChainTurtle()
-        """
-
-    def home(self) -> ChainTurtle:
-        """
-        Sets the position of the turtle to home (0, 0) with trace, heading = 0 .
-
-        :return: ChainTurtle()
-        """
+    @tp.override
+    def home(self) -> ChainTurtle: ...
 
     def home_inv(self) -> ChainTurtle:
         """
@@ -115,20 +85,13 @@ class ChainTurtle:
         :return: ChainTurtle()
         """
 
-    def begin_fill(self) -> ChainTurtle:
-        """
-        Makes the turtle begin fill for a closed shape.
+    @tp.override
+    def begin_fill(self) -> ChainTurtle: ...
 
-        :return: ChainTurtle()
-        """
+    @tp.override
+    def end_fill(self) -> ChainTurtle: ...
 
-    def end_fill(self) -> ChainTurtle:
-        """
-        Ends the turtle fill for a closed shape, therefore fills the shapes.
-
-        :return: ChainTurtle()
-        """
-
+    @tp.override
     def circle(self,
                radius: Real,
                extent: Real | None = None,
@@ -138,9 +101,9 @@ class ChainTurtle:
 
         :param radius: radius in pixels
 
-        :param extent: extent in degrees
+        :param extent: angle to be drawn in degrees, default = full circle
 
-        :param steps: number of sides
+        :param steps: number of straight-line segments used to approximate the arc
 
         :return: ChainTurtle()
         """
@@ -161,64 +124,66 @@ class ChainTurtle:
         :return: ChainTurtle()
         """
 
-    def dot(self, radius: Real) -> ChainTurtle:
-        """
-        Makes the turtle draw a colored dot
+    @tp.override
+    def dot(self, radius: Real) -> ChainTurtle: ...
 
-        :param radius: radius in pixels
-
-        :return: ChainTurtle()
-        """
-
+    @tp.overload
     def color(self, turtle_color: str) -> ChainTurtle:
         """
-        Lets the user change the color of the turtle trace and turtle color itself
+        Lets the user change the color of the turtle's trace and the turtle's fill
 
-        :param turtle_color: valid turtle color
+        :param turtle_color: a valid turtle color
 
         :return: ChainTurtle()
         """
 
+    @tp.overload
+    def color(self, turtle_color: None = None) -> str:
+        """
+        Lets the user retrieve the current turtle's color
+
+        :return: current turtle color -> str
+        """
+
+    @tp.override
     def teleport(self, x: Real, y: Real, *, fill_gap: bool = False) -> ChainTurtle:
         """
         Makes the turtle to go a specific coordinate with no trace
 
-        :param x: x position in pixels
+        :param x: horizontal (x) position in pixels
 
-        :param y: y position in pixels
-
-        :return: ChainTurtle()
-        """
-
-    def shape(self, shape_name: str) -> ChainTurtle:
-        """
-        Changes the shape of the turtle shape
-
-        :param shape_name: name of the shape
+        :param y: vertical (y) position in pixels
 
         :return: ChainTurtle()
         """
+    @tp.overload
+    def shape(self, shape_name: str) -> ChainTurtle: ...
 
-    def undo(self) -> ChainTurtle:
-        """
-        Undoes the last turtle command.
+    @tp.overload
+    def shape(self) -> str: ...
 
-        :return: ChainTurtle()
-        """
+    @tp.override
+    def undo(self) -> ChainTurtle: ...
 
-    def clear(self) -> ChainTurtle:
-        """
-        Deletes the turtles drawings.
+    @tp.override
+    def clear(self) -> ChainTurtle: ...
 
-        :return: ChainTurtle()
-        """
+    @tp.override
+    def hideturtle(self) -> ChainTurtle: ...
 
-    def ht(self) -> ChainTurtle:
-        """
-        Hides the turtle.
+    ht = hideturtle
 
-        :return: ChainTurtle()
-        """
+    @tp.override
+    def showturtle(self) -> ChainTurtle: ...
+
+    @tp.override
+    def begin_poly(self) -> ChainTurtle: ...
+
+    @tp.override
+    def end_poly(self) -> ChainTurtle:  ...
+
+    @tp.override
+    def get_poly(self) -> tp.Sequence[tuple[float, float]] | None: ...
 
     @classmethod
     def list_methods(cls) -> dict[str, Callable]:

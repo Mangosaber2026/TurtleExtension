@@ -3,10 +3,12 @@ This module contains a very useful function: tls_color, which lets the user crea
 colors and get a list with them.
 """
 
-from ..turtle_heart import ChainTurtle, tl
+import turtle as tls  # noqa: I001
+
+from .. import turtle_heart as tls_heart
 
 
-def get_screen() -> tl.Screen:
+def get_screen() -> tls._Screen:
     """
     Initiates the turtle screen when the function is called.
 
@@ -27,7 +29,7 @@ def mainloop() -> None:
     :return: None
     """
 
-type TurtleListType = list[ChainTurtle]
+type TurtleListType = list[tls_heart.ChainTurtle]
 
 def tls_color(**options) -> int | tuple[TurtleListType, int] | TurtleListType | None:
     """

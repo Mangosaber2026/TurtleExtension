@@ -8,12 +8,12 @@ t_now() -> lets users take the current UV turtle
 t_shape() -> lets users take the current turtle shape
 """
 
-from typing import Any
+from typing import Any  # noqa: I001
 
 from ..turtle_heart import ChainTurtle
 
 
-#* The type for the [[global_variables.py]] UV dictionary
+ #* 📝 The type for the UV dictionary
 UV: dict[str, Any]
 
 def t_now() -> ChainTurtle:

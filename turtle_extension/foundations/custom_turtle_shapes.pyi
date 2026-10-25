@@ -2,17 +2,17 @@
 This module contains the class Usershape which contains functions to make a customized turtle shape.
 """
 
-from collections.abc import Callable, Sequence
+import collections.abc as cabc  # noqa: I001
 from numbers import Real
 
 
-#* The type returned by each turtle shape changer function from [[UserShape]]
-type ReturnShapeType = Sequence[tuple[Real,Real]] | None
+ #* 📝 The type returned by each turtle shape changer function from UserShape
+type ReturnShapeType = cabc.Sequence[tuple[Real,Real]] | None
 
-#* The type of the dictionary derived from [[UserShape]]
+ #* 📝 The type of the dictionary derived from UserShape
 type UserShapeDictType = dict[
     str,
-    Callable[[], ReturnShapeType]
+    cabc.Callable[[], ReturnShapeType]
 ]
 
 
