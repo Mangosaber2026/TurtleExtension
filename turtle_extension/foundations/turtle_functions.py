@@ -11,7 +11,7 @@ from .global_variables import UV
 #* 📝 Class containing turtle shape changer functions
 class TurtleFct:
 
-    # ⚓ change_shape anchor: [[change-shape-anchor|change_shape()]] 
+    # ⚓ change_shape anchor: [[TurtleFct-change-shape-anchor|change_shape()]] 
      #* 📝 Main turtle shape changer function, potentially triggers [[#user-drawing-ft-anchor|user_tls_shape_ft()]] 
     @classmethod
     def change_shape(cls, tls_num = None):
@@ -39,7 +39,7 @@ class TurtleFct:
             else:
                 return cls.user_tls_shape_ft()
 
-    # ⚓ user_tls_shape_ft anchor: [[user-tls-shape-ft-anchor|user_tls_shape_ft()]] 
+    # ⚓ user_tls_shape_ft anchor: [[TurtleFct-user-tls-shape-ft-anchor|user_tls_shape_ft()]] 
     #* 📝 Lets the user choose custom shapes from [[#CUSTOM-SHAPES-anchor|CUSTOM_SHAPES]] 
     @staticmethod
     def user_tls_shape_ft(tls_num = None):
