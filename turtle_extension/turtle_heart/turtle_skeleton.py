@@ -10,7 +10,7 @@ import uf
  #* 📝 Class for chaining the conventional turtle functions
 class ChainTurtle(tl.Turtle):
 
-    # ⚓ fd anchor: [[ChainTurtle-fd-anchor|fd()]] 
+    # ⚓ fd anchor: [[ChainTurtle-forward-anchor|forward()]] 
     #* 📝 Moves the turtle forward
     @tp.override
     def forward(self, distance):
@@ -18,6 +18,7 @@ class ChainTurtle(tl.Turtle):
         return self
 
     fd = forward
+
 
     # ⚓ fd_inv anchor: [[ChainTurtle-fd-inv-anchor|fd_inv()]] 
     #* 📝 Moves the turtle forward invisibly
@@ -30,8 +31,9 @@ class ChainTurtle(tl.Turtle):
             self.pd()
 
         return self
+    
 
-    # ⚓ anchor: [[ChainTurtle-bk-anchor|bk()]] 
+    # ⚓ anchor: [[ChainTurtle-backward-anchor|backward()]] 
     #* 📝 Moves the turtle backward
     @tp.override
     def backward(self, distance):
@@ -40,6 +42,7 @@ class ChainTurtle(tl.Turtle):
 
     bk = backward
     back = backward     # type: ignore[ReportAssignmentType]
+
 
     # ⚓ anchor: [[ChainTurtle-bk-inv-anchor|bk_inv]] 
     #* 📝 Moves the turtle backward invisibly
@@ -53,7 +56,8 @@ class ChainTurtle(tl.Turtle):
 
         return self
 
-    # ⚓ anchor: [[ChainTurtle-rt-anchor|rt()]] 
+
+    # ⚓ anchor: [[ChainTurtle-right-anchor|right()]] 
     #* 📝 Turns the turtle to the right
     @tp.override
     def right(self, angle):
@@ -62,7 +66,8 @@ class ChainTurtle(tl.Turtle):
 
     rt = right
 
-    # ⚓ anchor: [[ChainTurtle-lt-anchor|lt()]] 
+
+    # ⚓ anchor: [[ChainTurtle-left-anchor|left()]] 
     #* 📝 Turns the turtle to the left
     @tp.override
     def left(self, angle):
@@ -70,6 +75,7 @@ class ChainTurtle(tl.Turtle):
         return self
 
     lt = left
+
 
     # ⚓ anchor: [[ChainTurtle-goto-anchor|goto()]] 
     #* 📝 Makes the turtle go to a specific coordinate
@@ -81,6 +87,7 @@ class ChainTurtle(tl.Turtle):
     setpos = goto
     setposition = goto
 
+
     # ⚓ anchor: [[ChainTurtle-penup-anchor|penup()]] 
     #* 📝 Lifts up the pen, turtle stops drawing
     @tp.override
@@ -90,6 +97,7 @@ class ChainTurtle(tl.Turtle):
 
     pu = penup
     up = penup
+
 
     # ⚓ anchor: [[ChainTurtle-pendown-anchor|pendown()]] 
     #* 📝 Puts the pen down, turtle starts drawing
@@ -101,7 +109,8 @@ class ChainTurtle(tl.Turtle):
     pd = pendown
     down = pendown
 
-    # ⚓ anchor: [[ChainTurtle-seth-anchor|seth()]] 
+
+    # ⚓ anchor: [[ChainTurtle-setheading-anchor|setheading()]] 
     #* 📝 Sets the turtles direction starting east (right)
     @tp.override
     def setheading(self, direction):
@@ -110,12 +119,14 @@ class ChainTurtle(tl.Turtle):
 
     seth = setheading
 
+
     # ⚓ anchor: [[ChainTurtle-home-anchor|home()]] 
     #* 📝 Sets the turtle to (0, 0) and heading = 0 -> east (right)
     @tp.override
     def home(self):
         super().home()
         return self
+
 
     # ⚓ anchor: [[ChainTurtle-home-inv-anchor|home_inv()]] 
     #* 📝 Sets the turtle to (0, 0) and heading = 0 -> east (right) traceless
@@ -129,12 +140,14 @@ class ChainTurtle(tl.Turtle):
 
         return self
 
+
     # ⚓ anchor: [[ChainTurtle-begin-fill-anchor|begin_fill()]] 
     #* 📝 Starts the fill of a shape
     @tp.override
     def begin_fill(self):
         super().begin_fill()
         return self
+
 
     # ⚓ anchor: [[ChainTurtle-end-fill-anchor|end_fill()]] 
     #* 📝 Ends the fill of a shape -> it gets colored
@@ -143,6 +156,7 @@ class ChainTurtle(tl.Turtle):
         super().end_fill()
         return self
 
+
     # ⚓ anchor: [[ChainTurtle-circle-anchor|circle()]] 
     #* 📝 Draws a circle with given radius
     @tp.override
@@ -150,11 +164,13 @@ class ChainTurtle(tl.Turtle):
         super().circle(radius, extent, steps)
         return self
 
+
     # ⚓ anchor: [[ChainTurtle-circle-fill-anchor|circle_fill()]] 
     #* 📝 Draws a filled circle with given radius
     def circle_fill(self, radius, angle = None, sides = None):
         self.begin_fill().circle(radius,angle,sides).end_fill()
         return self
+
 
     # ⚓ anchor: [[ChainTurtle-dot-anchor|dot()]] 
     #* 📝 Draws a colored with given diameter
@@ -163,12 +179,14 @@ class ChainTurtle(tl.Turtle):
         super().dot(size)
         return self
 
+
     # ⚓ anchor: [[ChainTurtle-color-anchor|color()]] 
     #* 📝 Changes the turtle color
     @tp.override
     def color(self, turtle_color):
         super().color(turtle_color)
         return self
+    
 
     # ⚓ anchor: [[ChainTurtle-teleport-anchor|teleport()]] 
     #* 📝 Teleports the turtle to a given coordinate
@@ -176,6 +194,7 @@ class ChainTurtle(tl.Turtle):
     def teleport(self, x, y, *, fill_gap: bool = False):
         super().teleport(x, y, fill_gap=fill_gap)
         return self
+
 
     # ⚓ anchor: [[ChainTurtle-shape-anchor|shape()]] 
     #* 📝 Changes the turtle's shape with a given name
@@ -187,12 +206,14 @@ class ChainTurtle(tl.Turtle):
         super().shape(shape_name)
         return self
 
+
     # ⚓ anchor: [[ChainTurtle-undo-anchor|undo()]] 
     #* 📝 Undoes the last turtle action
     @tp.override
     def undo(self):
         super().undo()
         return self
+
 
     # ⚓ anchor: [[ChainTurtle-clear-anchor|clear()]] 
     #* 📝 Clears the turtle's drawings on the screen
@@ -201,7 +222,8 @@ class ChainTurtle(tl.Turtle):
         super().clear()
         return self
 
-    # ⚓ anchor: [[ChainTurtle-ht-anchor|ht()]] 
+
+    # ⚓ anchor: [[ChainTurtle-hideturtle-anchor|hideturtle()]] 
     #* 📝 Hides the turtle on the turtle screen
     @tp.override
     def hideturtle(self):
@@ -209,6 +231,7 @@ class ChainTurtle(tl.Turtle):
         return self
 
     ht = hideturtle
+
 
     # ⚓ showturtle anchor: [[ChainTurtle-showturtle-anchor|showturtle()]] 
     #* 📝 Shows the turtle on the turtle screen
@@ -219,12 +242,14 @@ class ChainTurtle(tl.Turtle):
 
     st = showturtle
 
+
     # ⚓ anchor: [[ChainTurtle-begin-poly-anchor|begin_poly()]] 
     #* 📝 Begins recording the coordinates of a polygon to be drawn
     @tp.override
     def begin_poly(self):
         super().begin_poly()
         return self
+
 
     # ⚓ anchor: [[ChainTurtle-end-poly-anchor|end_poly()]] 
     #* 📝 Ends the recording of the coordinates of a polygon that has been drawn
@@ -233,11 +258,13 @@ class ChainTurtle(tl.Turtle):
         super().end_poly()
         return self
 
+
     # ⚓ anchor: [[ChainTurtle-get-poly-anchor|get_poly()]] 
     #* 📝 Retrieves the coordinates of a drawn polygon and returns it
     @tp.override
     def get_poly(self) -> tp.Sequence[tuple[float, float]] | None:
         return super().get_poly()
+
 
     # ⚓ anchor: [[ChainTurtle-list-methods-anchor|list_methods()]] 
     #* 📝 Creates and returns a dictionary with all [[ChainTurtle]] functions
