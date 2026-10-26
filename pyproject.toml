@@ -4,13 +4,13 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "TurtleExtension"
-version = "3.0.0"
+version = "3.1.0"
 description = "A Python utility library providing turtle extensions on top of Python's original turtle feature."
 readme = "README.md"
 requires-python = ">= 3.14"
 
 dependencies = [
-    "UniversalFunctions>=2.7.0",
+    "UniversalFunctions>=5.2.0",
 ]
 
 authors = [
@@ -20,6 +20,13 @@ authors = [
 [tool.setuptools.packages.find]
 include = [
     "turtle_extension*",
+]
+
+[tool.setuptools.package-data]
+turtle_extension = = [
+    "contributions/*.md",
+    "editor_configs/*.md",
+    "editor_configs/*.json",
 ]
 
 [tool.ruff.lint]
