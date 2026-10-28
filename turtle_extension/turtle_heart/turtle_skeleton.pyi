@@ -90,6 +90,8 @@ class ChainTurtle(tl.Turtle):
     @tp.override
     def setheading(self, direction: RealType) -> ChainTurtle: ...
 
+    seth = setheading
+
     @tp.override
     def home(self) -> ChainTurtle: ...
 
