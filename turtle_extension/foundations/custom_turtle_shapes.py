@@ -1,7 +1,5 @@
 # ⚓ Anchor for this module: [[custom-turtle-shapes-anchor|custom_turtle_shapes.py]] 
 
-import numbers as num
-
 import uf
 
 from .. import turtle_heart as tls_heart
@@ -18,7 +16,7 @@ class UserShape:
 	def custom_circle():		# type: ignore
         
 		# 🔗 Link to [[#get-num-anchor|get_num() root]] 
-		radius: num.Real = uf.get_num(float, "Enter the radius: ") # type: ignore
+		radius = uf.get_num(TYPE=float, entry="Enter the radius: ") # type: ignore
 		tl = tls_heart.tl
 		
 		tl.begin_poly()
@@ -33,7 +31,7 @@ class UserShape:
 	def custom_square():		# type: ignore
 
 		# 🔗 Link to [[#HelperFunctions-length-float-anchor|length_float() root]] 
-		length: num.Real = uf.helper.length_float()
+		length = uf.helper.length_float()
 		tl = tls_heart.tl
 		
 		tl.begin_poly()
@@ -52,7 +50,7 @@ class UserShape:
 	def custom_triangle():		# type: ignore
 
 		# 🔗 Link to [[#HelperFunctions-length-float-anchor|length_float() root]] 
-		length: num.Real = uf.helper.length_float() 
+		length = uf.helper.length_float() 
 		tl = tls_heart.tl
       
 		tl.begin_poly()
@@ -71,7 +69,7 @@ class UserShape:
 	def custom_poly():		# type: ignore
 
 		# 🔗 Link to [[#HelperFunctions-length-float-anchor|length_float() root]] 
-		length: num.Real = uf.helper.length_float()
+		length = uf.helper.length_float()
 
 		# 🔗 Link to [[#HelperFunctions-sides-num-anchor|sides_num() root]] 
 		sides: int = uf.helper.sides_num()
@@ -98,7 +96,7 @@ class UserShape:
 	def custom_SOD():		# type: ignore
 
 		# 🔗 Link to [[#HelperFunctions-length-float-anchor|length_float() root]] 
-		side: num.Real = uf.helper.length_float()
+		side = uf.helper.length_float()
 		tl = tls_heart.tl
 
 		tl.begin_poly()

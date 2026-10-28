@@ -7,16 +7,21 @@ t_now() -> lets users take the current UV turtle
 
 t_shape() -> lets users take the current turtle shape
 """
+ #* 📝 File type: Python type stub (.pyi)
+ #* 📝 Purpose: Describes the module's interface for documentation,
+ #* 📝         editor support, and static type checking.
+ #* 📝 Runtime: Contains no implementation; see the corresponding
+ #* 📝         .py file for executable code.
 
 from typing import Any  # noqa: I001
 
-from ..turtle_heart import ChainTurtle
+from .. import turtle_heart as tls_heart 
 
 
  #* 📝 The type for the UV dictionary
 UV: dict[str, Any]
 
-def t_now() -> ChainTurtle:
+def t_now() -> tls_heart.ChainTurtle:
     """
     This function returns the current UV turtle
 

@@ -2,6 +2,11 @@
 This module contains a very useful function: tls_color, which lets the user create any number of turtles with
 colors and get a list with them.
 """
+ #* 📝 File type: Python type stub (.pyi)
+ #* 📝 Purpose: Describes the module's interface for documentation,
+ #* 📝         editor support, and static type checking.
+ #* 📝 Runtime: Contains no implementation; see the corresponding
+ #* 📝         .py file for executable code.
 
 import turtle as tls  # noqa: I001
 

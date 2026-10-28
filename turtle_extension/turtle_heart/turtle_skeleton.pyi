@@ -1,11 +1,26 @@
 """
 This module contains the class ChainTurtle() which is the foundational object around which this entire software has been made.
 """
+ #* 📝 File type: Python type stub (.pyi)
+ #* 📝 Purpose: Describes the module's interface for documentation,
+ #* 📝         editor support, and static type checking.
+ #* 📝 Runtime: Contains no implementation; see the corresponding
+ #* 📝         .py file for executable code.
 
 import turtle  # noqa: I001
-from collections.abc import Callable
-from numbers import Real
+import collections.abc as cabc
+import numbers as num
 import typing as tp
+
+
+#* 📝 Type for any real number
+type RealType = float | int | num.Real
+
+#* 📝 Type for any real number or None
+type RealOrNone = RealType | None
+
+#* 📝 Type for any integer or None
+type IntOrNone = int | None
 
 
 tl = turtle
@@ -16,11 +31,11 @@ class ChainTurtle(tl.Turtle):
     
     """
     @tp.override
-    def forward(self, distance: Real) -> ChainTurtle: ...
+    def forward(self, distance: RealType) -> ChainTurtle: ...
 
     fd = forward
 
-    def fd_inv(self, distance: Real) -> ChainTurtle:
+    def fd_inv(self, distance: RealType) -> ChainTurtle:
         """
         Makes the turtle go forward with no trace.
 
@@ -30,12 +45,12 @@ class ChainTurtle(tl.Turtle):
         """
 
     @tp.override
-    def backward(self, distance: Real) -> ChainTurtle: ...
+    def backward(self, distance: RealType) -> ChainTurtle: ...
 
     bk = backward
     back = backward     # type: ignore
 
-    def bk_inv(self, distance: Real) -> ChainTurtle:
+    def bk_inv(self, distance: RealType) -> ChainTurtle:
         """
         Makes the turtle go backward with no trace.
 
@@ -45,17 +60,17 @@ class ChainTurtle(tl.Turtle):
         """
 
     @tp.override
-    def right(self, angle: Real) -> ChainTurtle: ...
+    def right(self, angle: RealType) -> ChainTurtle: ...
 
     rt = right
 
     @tp.override
-    def left(self, angle: Real) -> ChainTurtle: ...
+    def left(self, angle: RealType) -> ChainTurtle: ...
 
     lt = left
 
     @tp.override
-    def goto(self, x_val: Real, y_val: Real) -> ChainTurtle: ...
+    def goto(self, x_val: RealType, y_val: RealType) -> ChainTurtle: ...
 
     setpos = goto
     setposition = goto
@@ -73,7 +88,7 @@ class ChainTurtle(tl.Turtle):
     down = pendown
 
     @tp.override
-    def setheading(self, direction: Real) -> ChainTurtle: ...
+    def setheading(self, direction: RealType) -> ChainTurtle: ...
 
     @tp.override
     def home(self) -> ChainTurtle: ...
@@ -93,9 +108,9 @@ class ChainTurtle(tl.Turtle):
 
     @tp.override
     def circle(self,
-               radius: Real,
-               extent: Real | None = None,
-               steps: int | None = None) -> ChainTurtle:
+               radius: RealType,
+               extent: RealOrNone = None,
+               steps: IntOrNone = None) -> ChainTurtle:
         """
         Makes the turtle draw a circle
 
@@ -109,9 +124,9 @@ class ChainTurtle(tl.Turtle):
         """
 
     def circle_fill(self,
-                    radius: Real,
-                    angle: Real | None = None,
-                    sides: int | None = None) -> ChainTurtle:
+                    radius: RealType,
+                    angle: RealOrNone = None,
+                    sides: IntOrNone = None) -> ChainTurtle:
         """
         Makes the turtle draw a circle and fills it
 
@@ -125,7 +140,7 @@ class ChainTurtle(tl.Turtle):
         """
 
     @tp.override
-    def dot(self, radius: Real) -> ChainTurtle: ...
+    def dot(self, radius: RealType) -> ChainTurtle: ...
 
     @tp.overload
     def color(self, turtle_color: str) -> ChainTurtle:
@@ -146,7 +161,7 @@ class ChainTurtle(tl.Turtle):
         """
 
     @tp.override
-    def teleport(self, x: Real, y: Real, *, fill_gap: bool = False) -> ChainTurtle:
+    def teleport(self, x: RealType, y: RealType, *, fill_gap: bool = False) -> ChainTurtle:
         """
         Makes the turtle to go a specific coordinate with no trace
 
@@ -186,7 +201,7 @@ class ChainTurtle(tl.Turtle):
     def get_poly(self) -> tp.Sequence[tuple[float, float]] | None: ...
 
     @classmethod
-    def list_methods(cls) -> dict[str, Callable]:
+    def list_methods(cls) -> dict[str, cabc.Callable]:
         """
         Creates a dictionary with all ChainTurtle methods and returns it
         

@@ -4,7 +4,7 @@ import uf
 
 from .. import turtle_heart as tls_heart
 from . import custom_turtle_shapes as cm_tl_shapes
-from .global_variables import UV
+from . import global_variables as glb_var
 
 
 # ⚓ TurtleFct anchor: [[TurtleFct-anchor|class TurtleFct]] 
@@ -31,7 +31,7 @@ class TurtleFct:
                 tls_num.shape(user_shape)
                 return tls_num
             else:
-                UV["tls_shape"] = user_shape
+                glb_var.UV["tls_shape"] = user_shape
                 return user_shape
         else:
             if tls_num is not None:

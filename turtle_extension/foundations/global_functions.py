@@ -1,6 +1,6 @@
 # ⚓ Anchor for this module: [[global-functions-anchor|global_functions.py]] 
 
-import turtle as turtles
+import turtle as turtles  # noqa: I001
 import typing as tp
 from time import sleep as rest
 
@@ -8,6 +8,7 @@ import uf
 
 from .. import turtle_heart as tls_heart
 from . import global_variables as glb_var
+
 
 _screen = None
 
@@ -53,8 +54,8 @@ def tls_color(**options):
 
         tl_num = options[tl_num_name]
 
-        uf.int_validate()(tl_num, tl_num_name)
-        uf.Positive()(tl_num, tl_num_name)
+        uf.int_validate()(value=tl_num, name=tl_num_name)
+        uf.Positive()(value=tl_num, name=tl_num_name)
 
         turtles_num_count = tl_num
 
@@ -62,16 +63,16 @@ def tls_color(**options):
 
         entry = options[entry_name]
 
-        uf.str_validate()(entry, entry_name)
+        uf.str_validate()(value=entry, name=entry_name)
 
-        turtles_num_count = uf.get_num(int, entry, MIN=1)
+        turtles_num_count = uf.get_num(TYPE=int, entry=entry, MIN=1)
 
     elif index_name in options:
 
         index = options[index_name]
 
-        uf.int_validate()(index, index_name)
-        uf.Positive()(index, index_name)
+        uf.int_validate()(value=index, name=index_name)
+        uf.Positive()(value=index, name=index_name)
 
         turtles_num_count = index
 
@@ -80,6 +81,7 @@ def tls_color(**options):
         return None
 
     tls: list[tls_heart.ChainTurtle] = []
+    UV_tls: list[tls_heart.ChainTurtle] = glb_var.UV["tls"]
 
     for color_num in range(turtles_num_count):
 
@@ -93,7 +95,7 @@ def tls_color(**options):
                     .shape(glb_var.t_shape())
                 )
                 if index_name in options:
-                    glb_var.UV["tls"].append(turtle)
+                    UV_tls.append(turtle)
 
                 else:
                     tls.append(turtle)
@@ -119,12 +121,12 @@ def tls_color(**options):
 # ⚓ reset_tls anchor: [[reset-tls-anchor|reset_tls()]] 
 #* 📝 Resets the provided turtle list,
 #* 📝 deletes all turtle drawings and the turtles themselves
-def reset_tls(tls_list):
+def reset_tls(tls_list: list[tls_heart.ChainTurtle]):
 
     tls_list_name: tp.Final = "tls_list"
     
-    uf.TypeValidate(list)(tls_list, name=tls_list_name)
-    uf.SequenceValidate(tls_heart.ChainTurtle, ...)(tls_list, name=tls_list_name)
+    uf.TypeValidate(expected=list)(value=tls_list, name=tls_list_name)
+    uf.SequenceValidate(tls_heart.ChainTurtle, ...)(value=tls_list, name=tls_list_name)
 
     for t in tls_list:
         t.clear().ht()

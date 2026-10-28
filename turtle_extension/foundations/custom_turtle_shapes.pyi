@@ -1,13 +1,21 @@
 """
 This module contains the class Usershape which contains functions to make a customized turtle shape.
 """
+ #* 📝 File type: Python type stub (.pyi)
+ #* 📝 Purpose: Describes the module's interface for documentation,
+ #* 📝         editor support, and static type checking.
+ #* 📝 Runtime: Contains no implementation; see the corresponding
+ #* 📝         .py file for executable code.
 
 import collections.abc as cabc  # noqa: I001
-from numbers import Real
+import numbers as num
 
+
+#* 📝 Type for any real number
+type RealType = float | int | num.Real
 
  #* 📝 The type returned by each turtle shape changer function from UserShape
-type ReturnShapeType = cabc.Sequence[tuple[Real,Real]] | None
+type ReturnShapeType = cabc.Sequence[tuple[RealType, RealType]] | None
 
  #* 📝 The type of the dictionary derived from UserShape
 type UserShapeDictType = dict[
